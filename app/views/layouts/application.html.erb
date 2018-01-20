@@ -3,7 +3,6 @@
   <head>
     <title>hd:Store</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -14,11 +13,18 @@
   </div>
   <div id="columns">
     <div id="side">
+      <div id="cart"
+           <% if @cart.line_items.empty? %>
+           style="display: none"
+           <% end %>
+           >
+        <%= render(@cart) %>
+      </div>
       <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
+        <li><a href="http://www....">HOME</a></li>
+        <li><a href="http://www..../faq">QUESTIONS</a></li>
+        <li><a href="http://www..../news">NEWS</a></li>
+        <li><a href="http://www..../contact">CONTACTS</a></li>
       </ul>
     </div>
     <div id="main">
